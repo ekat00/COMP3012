@@ -46,6 +46,7 @@ let remindersController = {
     let reminderToFind = req.params.id;
     
     let updatedReminder = [{
+      id: req.params.id,
       title: req.body.title, 
       description: req.body.description, 
       completed: req.body.completed
