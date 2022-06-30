@@ -15,25 +15,27 @@ app.set("view engine", "ejs");
 
 // Routes start here
 
-// User wants to SEE list of reminders
+// 2 User wants to SEE list of reminders
 app.get("/reminders", reminderController.list);
 
-// User wants to SEE a page to create a new reminder
+// 3 User wants to SEE a page to create a new reminder
 app.get("/reminder/new", reminderController.new);
 
-// User wants to SEE an individual reminder
+// 5 User wants to SEE an individual reminder
 app.get("/reminder/:id", reminderController.listOne);
 
-// User wants to SEE a page to edit specific reminder
+// 6 User wants to SEE a page to edit specific reminder
 app.get("/reminder/:id/edit", reminderController.edit);
 
-// User wants to POST a new reminder to web server
+// 4 User wants to POST a new reminder to web server - from 3
 app.post("/reminder/", reminderController.create);
 
 // Implement this yourself
+// 7 User wants to POST an edit to specific reminder - from 6
 app.post("/reminder/update/:id", reminderController.update);
 
 // Implement this yourself
+// 8 User wants to POST a reminder deletion - from 6
 app.post("/reminder/delete/:id", reminderController.delete);
 
 // Fix this to work with passport! The registration does not need to work, you can use the fake database for this.
