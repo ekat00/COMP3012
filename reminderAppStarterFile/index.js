@@ -15,14 +15,19 @@ app.set("view engine", "ejs");
 
 // Routes start here
 
+// User wants to SEE list of reminders
 app.get("/reminders", reminderController.list);
 
+// User wants to SEE a page to create a new reminder
 app.get("/reminder/new", reminderController.new);
 
+// User wants to SEE an individual reminder
 app.get("/reminder/:id", reminderController.listOne);
 
+// User wants to SEE a page to edit specific reminder
 app.get("/reminder/:id/edit", reminderController.edit);
 
+// User wants to POST a new reminder to web server
 app.post("/reminder/", reminderController.create);
 
 // Implement this yourself

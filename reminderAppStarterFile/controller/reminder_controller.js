@@ -18,6 +18,7 @@ let remindersController = {
       res.render("reminder/single-reminder", { reminderItem: searchResult });
     } else {
       res.render("reminder/index", { reminders: database.cindy.reminders });
+      // or: res.redirect("/reminder");
     }
   },
 
