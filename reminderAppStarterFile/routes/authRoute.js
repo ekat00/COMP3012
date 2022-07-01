@@ -6,13 +6,13 @@ const router = express.Router();
 
 router.get("/login", forwardAuthenticated, (req, res) => res.render("login"));
 
-// router.post(
-//   "/login",
-//   passport.authenticate("local", {
-//     successRedirect: "/reminders",
-//     failureRedirect: "/auth/login",
-//   })
-// );
+router.post(
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/reminders",
+    failureRedirect: "/auth/login",
+  })
+);
 
 // test if POST request sent
 router.post("/login", (req, res) => {
